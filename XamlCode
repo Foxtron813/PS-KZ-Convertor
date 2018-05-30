@@ -1,0 +1,97 @@
+# PS-KZ-Convertor
+Unit Converter
+
+<Window x:Class="SimplerUnitConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimplerUnitConverter"
+        mc:Ignorable="d"
+        Title="Unit Convertion" Height="600" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="gbMass" Height="160" Width="700" Grid.Row="0" FontSize="14" Margin="46,20,46,10" Header="Mass">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Height="30" Width="120" Content="Convert Kilogram:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"/>
+                <TextBox x:Name="txtMassValue" Height="30" Width="150" Grid.Row="0" Grid.Column="1"/>
+                <Label Height="30" Width="100" Content="To Gram:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblGram" Height="30" Width="150" Content="" Grid.Row="0" Grid.Column="3" Background="LightGray"/>
+                <Label Height="30" Width="100" Content="To Ounce:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblOunce" Height="30" Width="150" Content="" Grid.Row="1" Grid.Column="3" Background="LightGray"/>
+                <Label Height="30" Width="100" Content="To Pound:" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblPound" Height="30" Width="150" Content="" Grid.Row="2" Grid.Column="3" Background="LightGray"/>
+                <Button x:Name="btnMassConv" Height="30" Width="120" Grid.Row="2" Grid.Column="0" Content="Convert Mass" Click="btnMassConv_Click"/>
+                <Button x:Name="btnMassClear" Height="30" Width="120" Grid.Row="2" Grid.Column="1" Content="Clear Mass" Click="btnMassClear_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gbTemp" Height="160" Width="700" Grid.Row="1" Header="Temperature" FontSize="14" Margin="46,20,46,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Height="30" Width="120" Content="Convert Celsius:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"/>
+                <TextBox x:Name="txtTempValue" Height="30" Width="150" Grid.Row="0" Grid.Column="1"/>
+                <Label Height="30" Width="100" Content="To Fahrenheit:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblFah" Height="30" Width="150" Content="" Grid.Row="0" Grid.Column="3" Background="LightGray"/>
+                <Label Height="30" Width="100" Content="To Kelvin:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblKel" Height="30" Width="150" Content="" Grid.Row="1" Grid.Column="3" Background="LightGray"/>
+                <Label Height="30" Width="100" Content="To Rankine:" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblRan" Height="30" Width="150" Content="" Grid.Row="2" Grid.Column="3" Background="LightGray"/>
+                <Button x:Name="btnTempConv" Height="30" Width="120" Grid.Row="2" Grid.Column="0" Content="Convert Temp" Click="btnTempConv_Click"/>
+                <Button x:Name="btnTempClear" Height="30" Width="120" Grid.Row="2" Grid.Column="1" Content="Clear Temp" Click="btnTempClear_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gbDist" Height="160" Width="700" Grid.Row="2" Header="Distance" FontSize="14" Margin="46,20,46,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Height="30" Width="120" Content="Convert Meter:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"/>
+                <TextBox x:Name="txtDistValue" Height="30" Width="150" Grid.Row="0" Grid.Column="1"/>
+                <Label Height="30" Width="100" Content="To Inch:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblInch" Height="30" Width="150" Content="" Grid.Row="0" Grid.Column="3" Background="LightGray"/>
+                <Label Height="30" Width="100" Content="To Foot:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblFoot" Height="30" Width="150" Content="" Grid.Row="1" Grid.Column="3" Background="LightGray"/>
+                <Label Height="30" Width="100" Content="To Mile:" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right"/>
+                <Label x:Name="lblMile" Height="30" Width="150" Content="" Grid.Row="2" Grid.Column="3" Background="LightGray"/>
+                <Button x:Name="btnDistConv" Height="30" Width="120" Grid.Row="2" Grid.Column="0" Content="Convert Dist" Click="btnDistConv_Click"/>
+                <Button x:Name="btnDistClear" Height="30" Width="120" Grid.Row="2" Grid.Column="1" Content="Clear Dist" Click="btnDistClear_Click"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
